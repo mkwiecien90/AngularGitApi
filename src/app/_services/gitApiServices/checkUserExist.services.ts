@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { tap, map } from 'rxjs/operators';
+import { User } from 'src/app/models/user.model';
 
 @Injectable({
     providedIn: "root"

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from './main/main/main.component';
-import { UserDataComponent } from './main/main/userData/user-data/user-data.component';
-import { InputUserComponent } from './main/input-user/input-user/input-user.component';
+import { InputUserComponent } from './main/input-user/input-user.component';
+import { UserDataComponent } from './main/user-data/user-data.component';
+import { MainComponent } from './main/main.component';
+
 
 
 const appChildren: Routes = [

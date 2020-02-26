@@ -1,4 +1,4 @@
-interface User {
+export interface User {
   login: string;
   id: number;
   node_id: string;
