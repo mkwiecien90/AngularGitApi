@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MainComponent } from './main/main.component';
 import { UserDataComponent } from './main/user-data/user-data.component';
 import { InputUserComponent } from './main/input-user/input-user.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InputUserComponent } from './main/input-user/input-user.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthorizeToken, multi: true},

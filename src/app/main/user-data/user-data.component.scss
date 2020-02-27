@@ -5,3 +5,37 @@
     height: 80vh;
     margin-top: 10vh;
 }
+
+.btn_left_arrow {
+    background: transparent;
+    border: none;
+    float: left;
+    width: fit-content;
+    outline: none;
+}
+
+.row_repos {
+    padding: 35px;
+    div {
+        &.flex {
+            display: flex;
+            span {
+                padding: 10px;
+            }
+        }
+    
+        &.flex.reverse {
+            display: flex; 
+            flex-direction: row-reverse;
+    
+            span {
+                padding: 10px
+            }
+    
+            span.m_20 {
+                padding: 10px;
+                margin-right: 20%;
+            }
+        }
+    }    
+}
