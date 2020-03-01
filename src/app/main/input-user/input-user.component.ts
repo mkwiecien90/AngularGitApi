@@ -27,14 +27,5 @@ export class InputUserComponent implements OnInit {
 
   onSubmit() {
     this.service.findGitUser(this.userName);
-    this.service.pipe(takeUntil(this.userInfo.suscribtionUser)).subscribe((response: User) => {
-      if (response) {
-        this.userInfo.rememberUser(response.login);
-        this.toastr.onSuccess('Znaleziono użytkownika');
-        this.router.navigate(['/app', 'userData'])
-      }
-    },(err)=>{
-      this.toastr.onError(err);
-    });
   }
 }

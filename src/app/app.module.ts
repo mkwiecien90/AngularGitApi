@@ -14,7 +14,8 @@ import { UserDataComponent } from './main/user-data/user-data.component';
 import { InputUserComponent } from './main/input-user/input-user.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ErrorCatcher } from './_interceptors/errorCatcher.interceptors';
-import { ToastService } from './_services/toast.service';
+import { ReposService } from './_services/gitApiServices/repos.service';
+import { BranchesService } from './_services/gitApiServices/branches.service';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,10 @@ import { ToastService } from './_services/toast.service';
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthorizeToken, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorCatcher, multi: true},
+    UserInfoService,
     CheckUserExistService, 
-    UserInfoService
+    ReposService,
+    BranchesService
   ],
   bootstrap: [AppComponent]
 })

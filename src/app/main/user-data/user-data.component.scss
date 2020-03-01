@@ -15,12 +15,17 @@
 }
 
 .row_repos {
+    border: 1px solid green;
     padding: 35px;
     div {
         &.flex {
             display: flex;
             span {
+                padding: 20px;
+            }
+            p {
                 padding: 10px;
+                width: 15%;
             }
         }
     
@@ -34,7 +39,7 @@
     
             span.m_20 {
                 padding: 10px;
-                margin-right: 20%;
+                margin-right: 5%;
             }
         }
     }    

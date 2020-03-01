@@ -2,15 +2,23 @@
     <button class="btn_left_arrow" (click)="returnToSelectUser()">
         <fa-icon [icon]="arrow" class="fa-2x"></fa-icon>
     </button>
-    <div >
+    <div style="overflow: auto;">
         <div class="row_repos" *ngFor="let arr of array">
             <div class="flex">
-                <span>{{arr.repositoryName}}</span>
-                <span>{{arr.loginOfRepositoryOwner}}</span>
+                <P>Repository Name</P>
+                <P>Owner</P>
+                <P>Branch</P>
+                <P>Last Commit</P>
             </div>
-            <div class="flex reverse" *ngFor="let branch of arr.branches">
-                <span class="m_20">{{branch.name}}</span>
-                <span>{{branch.commit}}</span>
+            <div>
+                <div class="flex">
+                    <span>{{arr.repositoryName}}</span>
+                    <span>{{arr.loginOfRepositoryOwner}}</span>
+                </div>
+                <div class="flex reverse" *ngFor="let branch of arr.branches">
+                    <span class="m_20">{{branch.commit}}</span>
+                    <span>{{branch.name}}</span>
+                </div>
             </div>
         </div>
     </div>
