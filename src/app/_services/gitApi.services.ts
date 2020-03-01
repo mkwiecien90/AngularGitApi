@@ -1,12 +1,12 @@
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
-export class GitApiService extends BehaviorSubject<any>{
+export class GitApiService extends Subject<any>{
     protected checkUserUrl: string;
     constructor(private http: HttpClient, private router: Router) {
-        super(null);
+        super();
         this.checkUserUrl = `${environment.apiUrl}/users`;
     }
 

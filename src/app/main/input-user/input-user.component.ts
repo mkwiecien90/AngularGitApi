@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CheckUserExistService } from 'src/app/_services/gitApiServices/checkUserExist.services';
 import { UserInfoService } from 'src/app/_services/userInfo.services';
 import { ToastService } from 'src/app/_services/toast.service';
 import { User } from 'src/app/models/user.model';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-input-user',
@@ -26,9 +27,8 @@ export class InputUserComponent implements OnInit {
 
   onSubmit() {
     this.service.findGitUser(this.userName);
-    this.service.subscribe((response: User) => {
+    this.service.pipe(takeUntil(this.userInfo.suscribtionUser)).subscribe((response: User) => {
       if (response) {
-        console.log(response, 'response')
         this.userInfo.rememberUser(response.login);
         this.toastr.onSuccess('Znaleziono użytkownika');
         this.router.navigate(['/app', 'userData'])
@@ -37,5 +37,4 @@ export class InputUserComponent implements OnInit {
       this.toastr.onError(err);
     });
   }
-
 }

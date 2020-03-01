@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
+import {  Subject } from 'rxjs';
 @Injectable()
 export class UserInfoService {
+    suscribtionUser = new Subject();
     constructor() {}
 
     rememberUser(login: string){
@@ -18,5 +20,12 @@ export class UserInfoService {
 
     clearCurrentUser() {
         localStorage.removeItem('userLogin');
+    }
+
+    unsubscribe(){
+        if(this.suscribtionUser) {
+            this.suscribtionUser.next();
+            this.suscribtionUser.complete();
+        }
     }
 }
